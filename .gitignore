@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# dotenv files (ignore all .env files, including in subdirectories and variants)
+.env
+.env.*
