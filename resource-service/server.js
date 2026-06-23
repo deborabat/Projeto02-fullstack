@@ -4,8 +4,10 @@ const compression = require("compression");
 const connectDB = require("./src/config/database");
 const { connectRedis } = require("./src/config/redis");
 const bookRoutes = require("./src/routes/bookRoutes");
+const cors = require("cors");
 
 const app = express();
+app.use(cors({ origin: "http://localhost:3000" }));
 app.use(compression());
 app.use(express.json());
 
