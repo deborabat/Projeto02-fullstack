@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback } from 'react'
+import { createContext, useContext, useState, useCallback, useEffect } from 'react'
 import axios from 'axios'
 import { useAuth } from './AuthContext'
 
@@ -29,6 +29,10 @@ export function BookProvider({ children }) {
       setLoading(false)
     }
   }, [token])
+
+  useEffect(() => {
+    if (token) fetchBooks()
+  }, [token, fetchBooks])
 
   async function createBook(data) {
     await axios.post(`${RESOURCE_URL}/books`, data, { headers: headers() })

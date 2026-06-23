@@ -68,8 +68,8 @@ export default function BookList() {
       </div>
 
       <Row xs={1} sm={2} md={3} lg={4} className="g-3">
-        {filteredBooks.map((book, i) => (
-          <Col key={i}>
+        {filteredBooks.map((book) => (
+          <Col key={book._id}>
             <BookCard
               book={book}
               isOwner={user?.id === book.proprietario}

@@ -32,7 +32,7 @@ export function NotificationProvider({ children, onEvent }) {
     }
 
     return () => ws.close()
-  }, [token])
+  }, [token, onEvent])
 
   return (
     <NotificationContext.Provider value={{}}>
